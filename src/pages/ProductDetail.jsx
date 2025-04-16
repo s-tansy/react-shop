@@ -1,22 +1,24 @@
 
 import { useParams, useLocation } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import {useState, useEffect} from "react";
 export default function ProductDetail() {
 
     const { id } = useParams();
     const { state } = useLocation();//用来获取当前页面的路由信息，包括路径、查询参数、state 数据等
-    const { product } = state || {};
     const { addToCart } = useCart();
+    const { productObj } = state || {};
+    const [product, setProduct] = useState(productObj);
 
-    if (!product) {
-        return <div className="p-6 text-red-500">找不到商品数据</div>;
-    }
-    // return (
-    //     <div className="p-4">
-    //         <h1 className="text-xl">商品详情（ID: {id}）</h1>
-    //         {/* TODO: 后续接入商品详情 */}
-    //     </div>
-    // );
+    useEffect(() => {
+        if (!product) {
+          fetch(`http://localhost:3001/products/${id}`)
+            .then(res => res.json())
+            .then(data => setProduct(data));
+        }
+      }, [id, product]);
+
+      if (!product) return <div className="p-6">加载中...</div>;
 
     return (
         <div className="p-6">

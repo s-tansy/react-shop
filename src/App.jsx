@@ -8,6 +8,8 @@ import RequireAuth from './pages/RequireAuth';
 import Navbar from './components/Navbar';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
+import AdminProductList from './pages/admin/AdminProductList';
+import OrderList from "./pages/OrderList";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/admin/products" element={<AdminProductList />} />
+        <Route path="/orders" element={<OrderList />} />
       </Routes>
     </BrowserRouter>);
 }

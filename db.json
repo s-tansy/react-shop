@@ -1,0 +1,190 @@
+{
+  "products": [
+    {
+      "id": "p001",
+      "name": "T恤",
+      "price": 59,
+      "image": "/images/tshirt1.jpg"
+    },
+    {
+      "id": "p002",
+      "name": "T恤",
+      "price": 109,
+      "image": "/images/tshirt2.jpg"
+    },
+    {
+      "id": "p003",
+      "name": "T恤",
+      "price": 34,
+      "image": "/images/tshirt3.jpg"
+    },
+    {
+      "id": "p004",
+      "name": "T恤",
+      "price": 58,
+      "image": "/images/tshirt4.jpg"
+    },
+    {
+      "id": "p005",
+      "name": "T恤",
+      "price": 19.9,
+      "image": "/images/tshirt5.jpg"
+    },
+    {
+      "id": "p006",
+      "name": "T恤",
+      "price": 39.9,
+      "image": "/images/tshirt6.jpg"
+    },
+    {
+      "id": "p007",
+      "name": "T恤",
+      "price": 79,
+      "image": "/images/tshirt7.jpg"
+    },
+    {
+      "id": "p008",
+      "name": "T恤",
+      "price": 89,
+      "image": "/images/tshirt8.jpg"
+    },
+    {
+      "id": "p009",
+      "name": "T恤",
+      "price": 210,
+      "image": "/images/tshirt9.jpg"
+    },
+    {
+      "id": "p010",
+      "name": "T恤",
+      "price": 69,
+      "image": "/images/tshirt10.jpg"
+    },
+    {
+      "id": "p011",
+      "name": "T恤",
+      "price": 59,
+      "image": "/images/tshirt11.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order001",
+      "user": "test_user",
+      "items": [
+        {
+          "id": "p001",
+          "name": "T恤",
+          "price": 59,
+          "quantity": 2
+        }
+      ],
+      "total": 118,
+      "createdAt": "2025-04-16T08:00:00Z"
+    },
+    {
+      "id": "f8cb",
+      "user": "test_user",
+      "items": [
+        {
+          "id": "p001",
+          "name": "T恤",
+          "price": 59,
+          "image": "/images/tshirt1.jpg",
+          "quantity": 2
+        }
+      ],
+      "total": 118,
+      "createdAt": "2025-04-16T09:57:45.295Z"
+    },
+    {
+      "id": "d214",
+      "user": "test_user",
+      "items": [
+        {
+          "id": "p001",
+          "name": "T恤",
+          "price": 59,
+          "image": "/images/tshirt1.jpg",
+          "quantity": 2
+        }
+      ],
+      "total": 118,
+      "createdAt": "2025-04-16T10:00:38.111Z"
+    },
+    {
+      "id": "302d",
+      "user": "test_user",
+      "items": [
+        {
+          "id": "p001",
+          "name": "T恤",
+          "price": 59,
+          "image": "/images/tshirt1.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 59,
+      "createdAt": "2025-04-16T10:02:11.324Z"
+    },
+    {
+      "id": "06ed",
+      "user": "test_user",
+      "items": [
+        {
+          "id": "p001",
+          "name": "T恤",
+          "price": 59,
+          "image": "/images/tshirt1.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 59,
+      "createdAt": "2025-04-16T10:03:00.852Z"
+    },
+    {
+      "id": "fd4d",
+      "user": "test_user",
+      "items": [
+        {
+          "id": "p001",
+          "name": "T恤",
+          "price": 59,
+          "image": "/images/tshirt1.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 59,
+      "createdAt": "2025-04-16T10:03:32.147Z"
+    },
+    {
+      "id": "c690",
+      "user": "test_user",
+      "items": [
+        {
+          "id": "p001",
+          "name": "T恤",
+          "price": 59,
+          "image": "/images/tshirt1.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 59,
+      "createdAt": "2025-04-16T12:58:48.246Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "u001",
+      "username": "admin",
+      "password": "123456",
+      "role": "admin"
+    },
+    {
+      "id": "u002",
+      "username": "user1",
+      "password": "123456",
+      "role": "user"
+    }
+  ]
+}

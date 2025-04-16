@@ -1,6 +1,8 @@
 import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
+  const navigate = useNavigate();
   const { cartItems, updateQuantity,removeFromCart,clearCart } = useCart();//获取购物车信息
 
   const totalPrice = cartItems.reduce(
