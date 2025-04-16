@@ -1,24 +1,23 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();//阻止表单提交后刷新页面
-    if (!email || !password) {
-      setError("请填写所有字段");
-      return;
-    }
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user && user.email === email && user.password === password) {
-      localStorage.setItem("token", "mock-token");
-      navigate("/user");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useAuth();
+
+  const [error, setError] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const success = await login(username, password);
+    if (success) {
+      navigate("/");
     } else {
-      setError("账号或密码错误");
+      setError("用户名或密码错误");
     }
   };
 
@@ -28,11 +27,13 @@ export default function Login() {
       {error && <p className="text-red-500 mb-2">{error}</p>}
       <form onSubmit={handleLogin} className="space-y-4">
         <input
-          type="email"
-          placeholder="邮箱"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          placeholder="用户名"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           className="w-full border p-2 rounded"
+           autoComplete="username"
+          required 
         />
         <input
           type="password"
@@ -40,6 +41,8 @@ export default function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="w-full border p-2 rounded"
+          autoComplete="current-password"
+          required 
         />
         <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">
           登录

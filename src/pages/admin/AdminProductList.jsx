@@ -1,75 +1,53 @@
 import { useEffect, useState } from "react";
+import { useAuth } from "../../context/AuthContext"
+import { Navigate, Link } from "react-router-dom";
 
 export default function AdminProductList() {
+  const { user } = useAuth();
   const [products, setProducts] = useState([]);
-  const [newName, setNewName] = useState("");
-  const [newPrice, setNewPrice] = useState("");
+
+  // 仅允许管理员访问
+  if (!user || user.role !== "admin") {
+    return <Navigate to="/login" />;
+  }
 
   useEffect(() => {
     fetch("http://localhost:3001/products")
-      .then(res => res.json())
-      .then(data => setProducts(data));
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
   }, []);
 
-  const handleDelete = (id) => {
-    fetch(`http://localhost:3001/products/${id}`, {
-      method: "DELETE",
-    }).then(() => {
-      setProducts(products.filter(p => p.id !== id));
-    });
-  };
-
-  const handleAdd = () => {
-    const newProduct = {
-      id: Date.now().toString(), // 临时 ID
-      name: newName,
-      price: parseFloat(newPrice),
-    };
-    fetch("http://localhost:3001/products", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newProduct),
-    }).then(res => res.json())
-      .then(data => {
-        setProducts([...products, data]);
-        setNewName("");
-        setNewPrice("");
+  const handleDelete = async (id) => {
+    if (window.confirm("确认删除该商品？")) {
+      await fetch(`http://localhost:3001/products/${id}`, {
+        method: "DELETE",
       });
+      setProducts(products.filter((p) => p.id !== id));
+    }
   };
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-bold mb-4">商品管理</h2>
-      
-      <div className="mb-4">
-        <input
-          className="border p-1 mr-2"
-          placeholder="商品名"
-          value={newName}
-          onChange={(e) => setNewName(e.target.value)}
-        />
-        <input
-          className="border p-1 mr-2"
-          placeholder="价格"
-          value={newPrice}
-          onChange={(e) => setNewPrice(e.target.value)}
-          type="number"
-        />
-        <button onClick={handleAdd} className="bg-green-500 text-white px-3 py-1 rounded">
-          添加商品
-        </button>
-      </div>
+      <h2 className="text-xl font-bold mb-4">后台商品管理</h2>
+
+      <Link to="/admin/products/new" className="mb-4 inline-block bg-blue-600 text-white px-4 py-2 rounded">
+        ➕ 添加新商品
+      </Link>
 
       <ul>
         {products.map((p) => (
-          <li key={p.id} className="flex justify-between border-b py-2">
-            <span>{p.name} - ￥{p.price}</span>
-            <button
-              onClick={() => handleDelete(p.id)}
-              className="text-red-500"
-            >
-              删除
-            </button>
+          <li key={p.id} className="border p-3 mb-2 flex justify-between">
+            <div>
+              <strong>{p.name}</strong> - ¥{p.price}
+            </div>
+            <div className="space-x-2">
+              <Link to={`/admin/products/${p.id}`} className="text-blue-600">
+                编辑
+              </Link>
+              <button onClick={() => handleDelete(p.id)} className="text-red-600">
+                删除
+              </button>
+            </div>
           </li>
         ))}
       </ul>

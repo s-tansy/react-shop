@@ -171,6 +171,21 @@
       ],
       "total": 59,
       "createdAt": "2025-04-16T12:58:48.246Z"
+    },
+    {
+      "id": "1ea9",
+      "user": "test_user",
+      "items": [
+        {
+          "id": "p001",
+          "name": "T恤",
+          "price": 59,
+          "image": "/images/tshirt1.jpg",
+          "quantity": 2
+        }
+      ],
+      "total": 118,
+      "createdAt": "2025-04-16T14:53:00.266Z"
     }
   ],
   "users": [
@@ -184,6 +199,12 @@
       "id": "u002",
       "username": "user1",
       "password": "123456",
+      "role": "user"
+    },
+    {
+      "id": "6eec",
+      "username": "haha",
+      "password": "123",
       "role": "user"
     }
   ]
