@@ -6,7 +6,7 @@ export default function ProductCard({ product }) {
   return (
     <div
       className="border rounded-xl p-2 shadow hover:shadow-lg cursor-pointer"
-      onClick={() => navigate(`/product/${product.id}`)}
+      onClick={() => navigate(`/product/${product.id}`, { state: { product } })}
     >
       <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded" />
       <h2 className="mt-2 font-semibold">{product.name}</h2>
