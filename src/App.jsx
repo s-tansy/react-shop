@@ -9,14 +9,18 @@ import Cart from './pages/Product/Cart';
 import Checkout from './pages/Product/Checkout';
 import AdminProductList from './pages/admin/AdminProductList';
 import OrderList from "./pages/Product/OrderList";
+import OrderComplete from "./pages/Product/OrderComplete";
+import ProductList from './components/ProductList';
+import NavbarHome from './components/NavbarHome';
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
+      <NavbarHome />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path='/product/:id' element={<ProductDetail />} />
+        <Route path='/product-list' element={<ProductList />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path="/user" element={<UserCenter />} />
@@ -24,6 +28,7 @@ function App() {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/admin/products" element={<AdminProductList />} />
         <Route path="/orders" element={<OrderList />} />
+        <Route path="/order-complete" element={<OrderComplete />} />
       </Routes>
     </BrowserRouter>);
 }

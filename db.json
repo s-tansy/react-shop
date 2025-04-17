@@ -4,67 +4,323 @@
       "id": "p001",
       "name": "T恤",
       "price": 59,
-      "image": "/images/tshirt1.jpg"
+      "image": "/images/tshirt1.jpg",
+      "type": "recommend",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colorCategory": [
+        {
+          "color": "红色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "蓝色",
+          "image": "/images/tshirt1_blue.jpg"
+        },
+        {
+          "color": "绿色",
+          "image": "/images/tshirt1_green.jpg"
+        }
+      ],
+      "productCategory": "男装",
+      "description": "短袖 休闲运动凉感T恤男打底衫2025",
+      "shop": "天猫"
     },
     {
       "id": "p002",
       "name": "T恤",
       "price": 109,
-      "image": "/images/tshirt2.jpg"
+      "image": "/images/tshirt2.jpg",
+      "type": "recommend",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colorCategory": [
+        {
+          "color": "黑色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "蓝色",
+          "image": "/images/tshirt1_blue.jpg"
+        }
+      ],
+      "productCategory": "男装",
+      "description": "夏季 休闲运动凉感T恤男打底衫",
+      "shop": "天猫"
     },
     {
       "id": "p003",
       "name": "T恤",
       "price": 34,
-      "image": "/images/tshirt3.jpg"
+      "image": "/images/tshirt3.jpg",
+      "type": "recommend",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colorCategory": [
+        {
+          "color": "白色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "红色",
+          "image": "/images/tshirt1_blue.jpg"
+        }
+      ],
+      "productCategory": "女装",
+      "description": "春夏 女短袖T恤女打底衫",
+      "shop": "天猫国际"
     },
     {
       "id": "p004",
       "name": "T恤",
       "price": 58,
-      "image": "/images/tshirt4.jpg"
+      "image": "/images/tshirt4.jpg",
+      "type": "recommend",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colorCategory": [
+        {
+          "color": "粉色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "白色",
+          "image": "/images/tshirt1_blue.jpg"
+        }
+      ],
+      "productCategory": "女装",
+      "description": "短袖 女 夏季2025新款T恤",
+      "shop": "安踏"
     },
     {
       "id": "p005",
-      "name": "T恤",
+      "name": "手机",
       "price": 19.9,
-      "image": "/images/tshirt5.jpg"
+      "image": "/images/phone1.jpg",
+      "type": "recommend",
+      "size": [
+        "128G 标准版",
+        "256G标准版"
+      ],
+      "colorCategory": [
+        {
+          "color": "珍珠白",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "天蓝色",
+          "image": "/images/tshirt1_blue.jpg"
+        }
+      ],
+      "productCategory": "手机",
+      "description": "iPhone11 Pro/Pro Max 128G/256G",
+      "shop": "苹果手机官方旗舰店"
     },
     {
       "id": "p006",
-      "name": "T恤",
+      "name": "手机",
       "price": 39.9,
-      "image": "/images/tshirt6.jpg"
+      "image": "/images/phone2.jpg",
+      "type": "recommend",
+      "size": [
+        "128G 标准版",
+        "256G标准版"
+      ],
+      "colorCategory": [
+        {
+          "color": "白色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "黑色",
+          "image": "/images/tshirt1_blue.jpg"
+        }
+      ],
+      "productCategory": "手机",
+      "description": "华为P30 Pro 128G/256G",
+      "shop": "华为手机官方旗舰店"
     },
     {
       "id": "p007",
-      "name": "T恤",
+      "name": "饰品",
       "price": 79,
-      "image": "/images/tshirt7.jpg"
+      "image": "/images/Bracelet1.jpg",
+      "type": "recommend",
+      "size": [
+        "15厘米",
+        "16厘米",
+        "17厘米"
+      ],
+      "colorCategory": [
+        {
+          "color": "金色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "银色",
+          "image": "/images/tshirt1_blue.jpg"
+        }
+      ],
+      "productCategory": "饰品",
+      "description": "施华洛世奇手链",
+      "shop": "施华洛世奇官方旗舰店"
     },
     {
       "id": "p008",
-      "name": "T恤",
+      "name": "饰品",
       "price": 89,
-      "image": "/images/tshirt8.jpg"
+      "image": "/images/hairpin1.jpg",
+      "type": "recommend",
+      "size": [
+        "10个",
+        "5个彩色+5个黑色",
+        "随机10个"
+      ],
+      "colorCategory": [
+        {
+          "color": "金色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "银色",
+          "image": "/images/tshirt1_blue.jpg"
+        }
+      ],
+      "productCategory": "饰品",
+      "description": "白搭女大发卡 多变发夹",
+      "shop": "小鱼多多"
     },
     {
       "id": "p009",
       "name": "T恤",
       "price": 210,
-      "image": "/images/tshirt9.jpg"
+      "image": "/images/hairpin1.jpg",
+      "type": "recommend",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colorCategory": [
+        {
+          "color": "红色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "蓝色",
+          "image": "/images/tshirt1_blue.jpg"
+        },
+        {
+          "color": "绿色",
+          "image": "/images/tshirt1_green.jpg"
+        }
+      ],
+      "productCategory": "男装",
+      "description": "短袖 休闲运动凉感T恤男打底衫2025",
+      "shop": "回力旗舰店"
     },
     {
       "id": "p010",
       "name": "T恤",
       "price": 69,
-      "image": "/images/tshirt10.jpg"
+      "image": "/images/tshirt10.jpg",
+      "type": "recommend",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colorCategory": [
+        {
+          "color": "红色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "蓝色",
+          "image": "/images/tshirt1_blue.jpg"
+        },
+        {
+          "color": "绿色",
+          "image": "/images/tshirt1_green.jpg"
+        }
+      ],
+      "productCategory": "男装",
+      "description": "短袖 休闲运动凉感T恤男打底衫2025",
+      "shop": "Nike旗舰店"
     },
     {
       "id": "p011",
       "name": "T恤",
       "price": 59,
-      "image": "/images/tshirt11.jpg"
+      "image": "/images/tshirt11.jpg",
+      "type": "recommend",
+      "size": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "colorCategory": [
+        {
+          "color": "红色",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "蓝色",
+          "image": "/images/tshirt1_blue.jpg"
+        },
+        {
+          "color": "绿色",
+          "image": "/images/tshirt1_green.jpg"
+        }
+      ],
+      "productCategory": "男装",
+      "description": "短袖 休闲运动凉感T恤男打底衫2025",
+      "shop": "Nike旗舰店"
+    },
+    {
+      "id": 1,
+      "name": "xiaomi note 12 pro",
+      "price": 1399,
+      "image": "/images/xiaomi.jpg",
+      "sales": 1699,
+      "category": "手机",
+      "type": "sale",
+      "size": [
+        "128G 标准版",
+        "256G标准版"
+      ],
+      "colorCategory": [
+        {
+          "color": "珍珠白",
+          "image": "/images/tshirt1_red.jpg"
+        },
+        {
+          "color": "天蓝色",
+          "image": "/images/tshirt1_blue.jpg"
+        }
+      ],
+      "productCategory": "手机",
+      "description": "xiami note 12 Pro 128G/256G",
+      "shop": "小米手机官方旗舰店"
     }
   ],
   "orders": [
@@ -80,7 +336,9 @@
         }
       ],
       "total": 118,
-      "createdAt": "2025-04-16T08:00:00Z"
+      "createdAt": "2025-04-16T08:00:00Z",
+      "address": "北京市朝阳区",
+      "status": "待发货"
     },
     {
       "id": "f8cb",
@@ -95,26 +353,13 @@
         }
       ],
       "total": 118,
-      "createdAt": "2025-04-16T09:57:45.295Z"
+      "createdAt": "2025-04-16T09:57:45.295Z",
+      "address": "上海市浦东新区",
+      "status": "待发货"
     },
     {
-      "id": "d214",
-      "user": "test_user",
-      "items": [
-        {
-          "id": "p001",
-          "name": "T恤",
-          "price": 59,
-          "image": "/images/tshirt1.jpg",
-          "quantity": 2
-        }
-      ],
-      "total": 118,
-      "createdAt": "2025-04-16T10:00:38.111Z"
-    },
-    {
-      "id": "302d",
-      "user": "test_user",
+      "id": "f58b",
+      "userId": "6eec",
       "items": [
         {
           "id": "p001",
@@ -125,11 +370,13 @@
         }
       ],
       "total": 59,
-      "createdAt": "2025-04-16T10:02:11.324Z"
+      "createdAt": "2025-04-17T03:10:02.356Z",
+      "address": "上海闵行",
+      "status": "待发货"
     },
     {
-      "id": "06ed",
-      "user": "test_user",
+      "id": "db11",
+      "userId": "6eec",
       "items": [
         {
           "id": "p001",
@@ -140,52 +387,9 @@
         }
       ],
       "total": 59,
-      "createdAt": "2025-04-16T10:03:00.852Z"
-    },
-    {
-      "id": "fd4d",
-      "user": "test_user",
-      "items": [
-        {
-          "id": "p001",
-          "name": "T恤",
-          "price": 59,
-          "image": "/images/tshirt1.jpg",
-          "quantity": 1
-        }
-      ],
-      "total": 59,
-      "createdAt": "2025-04-16T10:03:32.147Z"
-    },
-    {
-      "id": "c690",
-      "user": "test_user",
-      "items": [
-        {
-          "id": "p001",
-          "name": "T恤",
-          "price": 59,
-          "image": "/images/tshirt1.jpg",
-          "quantity": 1
-        }
-      ],
-      "total": 59,
-      "createdAt": "2025-04-16T12:58:48.246Z"
-    },
-    {
-      "id": "1ea9",
-      "user": "test_user",
-      "items": [
-        {
-          "id": "p001",
-          "name": "T恤",
-          "price": 59,
-          "image": "/images/tshirt1.jpg",
-          "quantity": 2
-        }
-      ],
-      "total": 118,
-      "createdAt": "2025-04-16T14:53:00.266Z"
+      "createdAt": "2025-04-17T03:21:51.382Z",
+      "address": "北京朝阳区",
+      "status": "待发货"
     }
   ],
   "users": [
@@ -206,6 +410,68 @@
       "username": "haha",
       "password": "123",
       "role": "user"
+    }
+  ],
+  "productCategories": [
+    {
+      "id": "childrenClothes",
+      "name": "母婴童装"
+    },
+    {
+      "id": "phones",
+      "name": "手机"
+    },
+    {
+      "id": "seafood",
+      "name": "海鲜"
+    },
+    {
+      "id": "womenClothes",
+      "name": "女装"
+    },
+    {
+      "id": "ornaments",
+      "name": "饰品"
+    },
+    {
+      "id": "menClothes",
+      "name": "男装"
+    },
+    {
+      "id": "medicine",
+      "name": "药品"
+    },
+    {
+      "id": "toys",
+      "name": "玩具"
+    },
+    {
+      "id": "computers",
+      "name": "电脑"
+    },
+    {
+      "id": "books",
+      "name": "书籍"
+    },
+    {
+      "id": "homeAppliances",
+      "name": "家电"
+    },
+    {
+      "id": "sports",
+      "name": "运动"
+    },
+    {
+      "id": "furniture",
+      "name": "家具"
+    },
+    {
+      "id": "cosmetics",
+      "name": "化妆品"
+    },
+    {
+      "id": "kitchenware",
+      "name": "厨具"
     }
   ]
 }

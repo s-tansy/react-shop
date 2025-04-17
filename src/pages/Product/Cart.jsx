@@ -1,15 +1,16 @@
 import { useCart } from "../../context/CartContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Cart() {
   const navigate = useNavigate();
-  const { cartItems, updateQuantity,removeFromCart,clearCart } = useCart();//获取购物车信息
+  const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart();//获取购物车信息
 
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
+  //需要增加判断购物车是否为空
   const handleCheckout = () => {
     navigate("/checkout", {
       state: { cartItems, totalPrice },
@@ -22,7 +23,11 @@ export default function Cart() {
       <h1 className="text-2xl font-bold mb-4">🛒 我的购物车</h1>
 
       {cartItems.length === 0 ? (
-        <p className="text-gray-500">购物车为空</p>
+        <>
+          <p className="text-gray-500">购物车为空</p>
+          <Link to="/">去逛逛商品 →</Link>
+        </>
+
       ) : (
         <div className="space-y-4">
           {cartItems.map((item) => (

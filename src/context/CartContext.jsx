@@ -48,6 +48,11 @@ export const CartProvider = ({ children }) => {
         )
     );
   };
+
+  const totalPrice = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
   
   //清空购物车
   const clearCart = () => {
@@ -57,7 +62,7 @@ export const CartProvider = ({ children }) => {
 
   return (
     //通过 Provider 把 cartItems 和 addToCart 提供给所有子组件
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity, clearCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, updateQuantity, clearCart ,totalPrice}}>
       {children}
     </CartContext.Provider>
   );
