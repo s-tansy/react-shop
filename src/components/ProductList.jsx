@@ -5,12 +5,12 @@ import { useSearchParams } from "react-router-dom";
 export default function ProductList() {
     const [products, setProducts] = useState([]);
     const [searchParams] = useSearchParams();
-    const type = searchParams.get("type");
-    const typeName=type?`?type=${type}`:"";
+    const category = searchParams.get("productCategory");
+    const categoryName = category ? `?productCategory=${category}` : "";
 
     useEffect(() => {
-    
-        fetch("http://localhost:3001/products" + typeName)
+
+        fetch("http://localhost:3001/products" + categoryName)
             .then(res => {
                 return res.json();
             })
@@ -18,8 +18,8 @@ export default function ProductList() {
                 setProducts(data);
             })
             .catch(err => console.error("加载商品失败", err));
-    }, [type]);
-    
+    }, [category]);
+
 
     return (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

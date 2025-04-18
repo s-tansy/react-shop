@@ -1,24 +1,32 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import ProductDetail from './pages/Product/ProductDetail';
 import Login from './pages/Login/Login';
 import Register from './pages/Login/Register';
 import UserCenter from './pages/Login/UserCenter';
-import Navbar from './components/Navbar';
+import Navbar from './components/NavbarCart';
 import Cart from './pages/Product/Cart';
 import Checkout from './pages/Product/Checkout';
 import AdminProductList from './pages/admin/AdminProductList';
 import OrderList from "./pages/Product/OrderList";
 import OrderComplete from "./pages/Product/OrderComplete";
 import ProductList from './components/ProductList';
-import NavbarHome from './components/NavbarHome';
+import NavBarCart from './components/NavbarCart';
+import NavBarActive from './components/NavbarActive';
+import NavBarSearch from './components/NavbarSearch';
+import NavbarCategory from './components/NavbarCategory';
 
-function App() {
+function AppRoutes() {
+  const location = useLocation();
+  const showNav = ['/', '/product-list'].includes(location.pathname);
+
   return (
-    <BrowserRouter>
-      <NavbarHome />
+    <>
+      <NavBarCart />
+      {showNav && <><NavBarActive /><NavBarSearch /><NavbarCategory /></>}
+
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<ProductList />} />
         <Route path='/product/:id' element={<ProductDetail />} />
         <Route path='/product-list' element={<ProductList />} />
         <Route path='/login' element={<Login />} />
@@ -30,7 +38,14 @@ function App() {
         <Route path="/orders" element={<OrderList />} />
         <Route path="/order-complete" element={<OrderComplete />} />
       </Routes>
-    </BrowserRouter>);
+    </>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
+}

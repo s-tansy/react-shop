@@ -210,7 +210,7 @@
       "id": "p009",
       "name": "T恤",
       "price": 210,
-      "image": "/images/hairpin1.jpg",
+      "image": "/images/tshirt9.jpg",
       "type": "recommend",
       "size": [
         "S",
@@ -473,5 +473,7 @@
       "id": "kitchenware",
       "name": "厨具"
     }
+  ],
+  "activities": [
   ]
 }
