@@ -1,0 +1,17 @@
+{
+    "products": [
+      {
+        "id": "1",
+        "description": "男士短袖T恤"
+      },
+      {
+        "id": "2",
+        "description": "女士连衣裙"
+      },
+      {
+        "id": "3",
+        "description": "儿童T恤"
+      }
+    ]
+  }
+  

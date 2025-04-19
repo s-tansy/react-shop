@@ -4,6 +4,7 @@ import { useCart } from "../context/CartContext";
 
 export default function NavBarCart() {
     const { user, logout } = useAuth();
+    console.log("NavBarCart", user);
     const { cartItems } = useCart();
     const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     const cartProducts = totalCount > 0 ? `(${totalCount})` : "";
@@ -19,12 +20,14 @@ export default function NavBarCart() {
 
                 {/* 右侧：购物车等 */}
                 <div className="flex gap-4">
-                    {user ? (
+                    {!user ? (
                         <>
-                            {user.role === "admin" && (
-                                <Link to="/admin/products">管理员中心</Link>
-                            )}
-                            <Link to="/login" onClick={logout}>退出</Link>
+                            <Link to="/login">
+                                🛒购物车
+                                <span className="text-red-500 ml-1">{cartProducts}</span>
+                            </Link>
+                            <Link to="/login">☆收藏夹</Link>
+                            <Link to="/login">用户中心</Link>
                         </>
                     ) : (
                         <>
@@ -33,7 +36,12 @@ export default function NavBarCart() {
                                 <span className="text-red-500 ml-1">{cartProducts}</span>
                             </Link>
                             <Link to="/register">☆收藏夹</Link>
-                            <Link to="/register">用户中心</Link>
+                            {user.role === "admin" ? (
+                                <Link to="/admin/products">管理员中心</Link>
+                            ) : (
+                                <Link to="/user">用户中心</Link>
+                            )}
+                            <Link to="/login" onClick={logout}>退出</Link>
                         </>
                     )}
                 </div>

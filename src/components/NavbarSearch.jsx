@@ -1,16 +1,29 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { buildQueryString } from "../utils/QueryBuilder";
 
 export default function NavBarSearch() {
+    const [searchParams] = useSearchParams(); // 用于从 URL 读取参数
     const [searchTerm, setSearchTerm] = useState("");
     const navigate = useNavigate();
 
+    // ✅ 初始化时根据 URL 参数恢复输入框内容
+    useEffect(() => {
+        const initialSearch = searchParams.get("description_like") || "";
+        setSearchTerm(initialSearch);
+    }, [searchParams]);
+
     const handleSearch = (e) => {
         e.preventDefault();
-        if (searchTerm.trim()) {
-            navigate(`/product-list?search=${encodeURIComponent(searchTerm.trim())}`);
-            setSearchTerm(""); // 可选：搜索后清空
-        }
+
+        const query = buildQueryString({
+            description_like: searchTerm.trim(),
+            sort: 'price_desc',
+            page: 1,
+            limit: 10,
+        });
+
+        navigate(`/product-list?${query}`);
     };
 
     return (
@@ -19,7 +32,12 @@ export default function NavBarSearch() {
                 <div className="flex items-center space-x-8 w-4/5">
                     {/* Logo */}
                     <div className="w-1/5 flex justify-center">
-                        <img src="/images/logo.png" alt="Logo" className="h-12 cursor-pointer"  onClick={() => {navigate('/');}} />
+                        <img
+                            src="/images/logo.png"
+                            alt="Logo"
+                            className="h-12 cursor-pointer"
+                            onClick={() => { navigate('/'); }}
+                        />
                     </div>
 
                     {/* 搜索框 */}
@@ -43,7 +61,6 @@ export default function NavBarSearch() {
                     </form>
                 </div>
             </nav>
-
         </div>
     );
 }
